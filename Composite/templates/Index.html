@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Composite Labs and Monad Chatbot</title>
+    <link rel="stylesheet" href="style.css"> <!-- Linking the external CSS file -->
+</head>
+<body>
+
+    <h1>Welcome to the Composite Labs and Monad Chatbot</h1>
+    <p>Type your question below and the bot will respond.</p>
+
+    <form action="/chat" method="post">
+        <input type="text" name="message" placeholder="Ask about Composite Labs or Monad..." required>
+        <button type="submit">Send</button>
+    </form>
+
+    <div class="chat-container">
+        {% if user_input %}
+        <div class="message user-message">
+            <strong>You:</strong> {{ user_input }}
+        </div>
+        <div class="message assistant-message">
+            <strong>Assistant:</strong> {{ assistant_response }}
+        </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>
